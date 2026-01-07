@@ -82,11 +82,11 @@ export default function TransparenciaPage() {
         </div>
 
         {/* Charts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Monthly Donations */}
-          <div className="bg-white rounded-2xl shadow-md p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">Doações Mensais (Kz)</h3>
-            <ResponsiveContainer width="100%" height={300}>
+          <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Doações Mensais (Kz)</h3>
+            <ResponsiveContainer width="100%" height={250} className="sm:h-[300px]">
               <BarChart data={monthlyData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
@@ -98,9 +98,9 @@ export default function TransparenciaPage() {
           </div>
 
           {/* Distribution by Category */}
-          <div className="bg-white rounded-2xl shadow-md p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">Distribuição por Área</h3>
-            <ResponsiveContainer width="100%" height={300}>
+          <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Distribuição por Área</h3>
+            <ResponsiveContainer width="100%" height={250} className="sm:h-[300px]">
               <PieChart>
                 <Pie
                   data={distributionData}

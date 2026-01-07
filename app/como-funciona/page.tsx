@@ -12,23 +12,22 @@ export default function ComoFuncionaPage() {
     },
     {
       number: 2,
-      title: 'Defina Seu Valor',
-      description: 'Escolha o valor que deseja doar. Não há valor mínimo - toda contribuição faz diferença.',
+      title: 'Escolha o Tipo de Doação',
+      description: 'Decida se prefere doar dinheiro ou bens materiais como roupas, alimentos, brinquedos e mais.',
       details: [
-        'Valores pré-definidos ou digite o seu',
-        'Doação única ou recorrente (mensal)',
-        'Veja o impacto estimado da sua doação'
+        'Doação monetária: única ou recorrente',
+        'Bens materiais: roupas, alimentos, livros, móveis, etc',
+        'Não há valor mínimo - toda contribuição é bem-vinda'
       ]
     },
     {
       number: 3,
-      title: 'Faça o Pagamento',
-      description: 'Pague de forma 100% segura com o método de sua preferência.',
+      title: 'Complete a Doação',
+      description: 'Para doações monetárias, pague com segurança. Para bens, coordene a entrega ou coleta.',
       details: [
-        'Multicaixa Express',
-        'PayPay',
-        'Cartão de crédito',
-        'Transferência bancária'
+        'Dinheiro: Multicaixa Express, PayPay, cartão ou transferência',
+        'Bens: Agendaremos coleta ou você pode entregar',
+        'Confirmação instantânea por email e SMS'
       ]
     },
     {
@@ -125,11 +124,19 @@ export default function ComoFuncionaPage() {
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Posso doar bens usados?
+              </h3>
+              <p className="text-gray-600">
+                Sim! Aceitamos roupas, calçados, móveis e outros itens em bom estado de conservação. 
+                Basta estar limpo e funcional.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
                 Qual é o valor mínimo para doar?
               </h3>
               <p className="text-gray-600">
-                Não há valor mínimo. Acreditamos que toda contribuição, por menor que seja, 
-                faz diferença e é bem-vinda.
+                Não há valor mínimo para doações monetárias. Para bens, qualquer quantidade é bem-vinda.
               </p>
             </div>
             <div>

@@ -147,8 +147,8 @@ export default function AdminPage() {
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Visão Geral</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                  <div className="bg-white rounded-2xl shadow-md p-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+                  <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6">
                     <p className="text-gray-600 mb-2">Total Arrecadado</p>
                     <p className="text-3xl font-bold text-primary-600">
                       {stats.totalDonations.toLocaleString()} Kz
@@ -207,34 +207,36 @@ export default function AdminPage() {
                 
                 <div className="space-y-4">
                   {pendingInstitutions.map((institution) => (
-                    <div key={institution.id} className="bg-white rounded-2xl shadow-md p-6">
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <div key={institution.id} className="bg-white rounded-2xl shadow-md p-4 sm:p-6">
+                      <div className="flex flex-col sm:flex-row items-start gap-4">
+                        <div className="flex-1 w-full">
+                          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
                             {institution.name}
                           </h3>
-                          <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
+                          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600 mb-4">
+                            <span className="px-2 sm:px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">
                               {institution.category}
                             </span>
-                            <span>{institution.location}</span>
-                            <span>Enviado em {institution.submittedAt}</span>
+                            <span className="text-xs sm:text-sm">{institution.location}</span>
+                            <span className="hidden sm:inline text-xs sm:text-sm">Enviado em {institution.submittedAt}</span>
                           </div>
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 w-full sm:w-auto">
                           <button
                             onClick={() => handleApprove(institution.id)}
-                            className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                            className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
                           >
                             <FiCheckCircle />
-                            Aprovar
+                            <span className="hidden sm:inline">Aprovar</span>
+                            <span className="sm:hidden">✓</span>
                           </button>
                           <button
                             onClick={() => handleReject(institution.id)}
-                            className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                            className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-sm"
                           >
                             <FiXCircle />
-                            Rejeitar
+                            <span className="hidden sm:inline">Rejeitar</span>
+                            <span className="sm:hidden">✗</span>
                           </button>
                         </div>
                       </div>
@@ -249,8 +251,8 @@ export default function AdminPage() {
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Todas as Doações</h2>
                 
-                <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-                  <table className="w-full">
+                <div className="bg-white rounded-2xl shadow-md overflow-hidden overflow-x-auto">
+                  <table className="w-full min-w-[640px]">
                     <thead className="bg-gray-50 border-b">
                       <tr>
                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">

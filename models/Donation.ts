@@ -11,9 +11,15 @@ const DonationSchema = new mongoose.Schema({
     ref: 'Institution',
     required: true,
   },
+  donationType: {
+    type: String,
+    enum: ['money', 'goods'],
+    default: 'money',
+  },
+  // Monetary donation fields
   amount: {
     type: Number,
-    required: [true, 'Valor da doação é obrigatório'],
+    required: function() { return this.donationType === 'money' },
     min: [1, 'Valor mínimo é 1'],
   },
   frequency: {
@@ -24,8 +30,25 @@ const DonationSchema = new mongoose.Schema({
   paymentMethod: {
     type: String,
     enum: ['multicaixa', 'paypay', 'credit_card', 'bank_transfer'],
-    required: true,
+    required: function() { return this.donationType === 'money' },
   },
+  // Goods donation fields
+  goodsType: {
+    type: String,
+    enum: ['Roupas', 'Alimentos', 'Brinquedos', 'Livros', 'Móveis', 'Eletrônicos', 'Medicamentos', 'Outros'],
+    required: function() { return this.donationType === 'goods' },
+  },
+  goodsDescription: {
+    type: String,
+    maxlength: [1000, 'Descrição muito longa'],
+    required: function() { return this.donationType === 'goods' },
+  },
+  deliveryStatus: {
+    type: String,
+    enum: ['pending', 'scheduled', 'collected', 'delivered'],
+    default: 'pending',
+  },
+  deliveryDate: Date,
   paymentStatus: {
     type: String,
     enum: ['pending', 'completed', 'failed', 'refunded'],

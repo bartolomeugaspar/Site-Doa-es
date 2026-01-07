@@ -13,7 +13,7 @@ const HowItWorks = () => {
     {
       icon: <FiHeart className="text-4xl" />,
       title: 'Faça Sua Doação',
-      description: 'Doe de forma segura com valor livre ou pré-definido. Única ou recorrente.',
+      description: 'Doe dinheiro ou bens materiais. Doações monetárias podem ser únicas ou recorrentes.',
       color: 'bg-secondary-50 text-secondary-600',
     },
     {
@@ -42,7 +42,7 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               <div className="text-center">

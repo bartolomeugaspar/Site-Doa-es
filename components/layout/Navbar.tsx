@@ -19,9 +19,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold text-primary-600">
-            <FiHeart className="text-2xl" />
-            <span>Doar com Propósito</span>
+          <Link href="/" className="flex items-center gap-2 text-lg sm:text-xl font-bold text-primary-600">
+            <FiHeart className="text-xl sm:text-2xl" />
+            <span className="hidden xs:inline">Doar com Propósito</span>
+            <span className="inline xs:hidden">Doar</span>
           </Link>
 
           {/* Desktop Menu */}

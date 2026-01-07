@@ -120,8 +120,8 @@ export default function PerfilPage() {
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Visão Geral</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-white rounded-2xl shadow-md p-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8">
+                  <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6">
                     <p className="text-gray-600 mb-2">Total Doado</p>
                     <p className="text-3xl font-bold text-primary-600">
                       {userData.totalDonated.toLocaleString()} Kz
@@ -168,7 +168,7 @@ export default function PerfilPage() {
                 
                 <div className="space-y-4">
                   {donations.map((donation) => (
-                    <div key={donation.id} className="bg-white rounded-2xl shadow-md p-6">
+                    <div key={donation.id} className="bg-white rounded-2xl shadow-md p-4 sm:p-6">
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div className="flex-1">
                           <h3 className="text-lg font-bold text-gray-900 mb-1">
@@ -179,8 +179,8 @@ export default function PerfilPage() {
                           </p>
                         </div>
                         <div className="flex items-center gap-4">
-                          <div className="text-right">
-                            <p className="text-2xl font-bold text-primary-600">
+                          <div className="text-right flex-1 sm:flex-initial">
+                            <p className="text-xl sm:text-2xl font-bold text-primary-600">
                               {donation.amount.toLocaleString()} Kz
                             </p>
                             <span className="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">

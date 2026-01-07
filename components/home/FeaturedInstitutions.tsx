@@ -59,7 +59,7 @@ const FeaturedInstitutions = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {institutions.map((institution) => (
             <Link
               key={institution.id}
@@ -82,7 +82,7 @@ const FeaturedInstitutions = () => {
                 </div>
               </div>
 
-              <div className="p-5">
+              <div className="p-4 sm:p-5">
                 <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
                   {institution.name}
                 </h3>
